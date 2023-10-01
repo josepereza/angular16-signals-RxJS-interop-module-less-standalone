@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+    justify-items: center;
+
+}
+.izq {
+    width: 100%;
+margin: auto;
+text-align: center;
+  background-color: rgb(226, 169, 83);
+  padding:20px ;
+}
+.dcha {
+    background-color: antiquewhite;
+    padding:20px ;
+
+}

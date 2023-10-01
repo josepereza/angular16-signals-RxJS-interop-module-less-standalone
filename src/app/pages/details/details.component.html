@@ -1,1 +1,16 @@
-<p>details works!</p>
+<div  *ngIf="personaje"  class="container">
+    <div class="izq">
+<img [src]="personaje.image"  alt="">
+    </div>
+    <div class="dcha">
+<h2>{{personaje.name}}</h2>
+<h4>{{personaje.character}}</h4>
+<h4>{{personaje.amiiboSeries}}</h4>
+<h4>{{personaje.head}}</h4>
+
+
+    </div>
+</div>
+
+
+

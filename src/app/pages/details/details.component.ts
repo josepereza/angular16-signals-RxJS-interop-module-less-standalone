@@ -17,6 +17,7 @@ import { Amiibo } from 'src/app/interfaces/amiibo';
 })
 export class DetailsComponent implements OnInit{
   personaje$!:Observable<any>
+  personaje!:Amiibo
   constructor(private nintendoService:NintendoService, private route:ActivatedRoute, private location:Location){
 
   }
@@ -25,7 +26,9 @@ export class DetailsComponent implements OnInit{
   this.personaje$ = this.nintendoService.getOne(selectedId)
 
  this.personaje$.subscribe(data=>{
-  console.log(data)
+ console.log(data.amiibo[0])
+  this.personaje=data.amiibo[0]
+  
  })
   
     }
