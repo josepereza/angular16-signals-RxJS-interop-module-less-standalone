@@ -16,6 +16,8 @@ export class NintendoService {
     public nintendo:Signal<Amiibo[]>= toSignal(this.http.get<Nintendo>('https://amiiboapi.com/api/amiibo/?name=mario').pipe(map((res: any) => res.amiibo)))
    
    
-  
+  getOne(id:any){
+return this.http.get(`https://amiiboapi.com/api/amiibo/?tail=${id}`)
+  }
 }
 
