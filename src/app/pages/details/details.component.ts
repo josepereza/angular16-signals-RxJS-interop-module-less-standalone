@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NintendoService } from 'src/app/services/nintendo.service';
 import {Location} from '@angular/common';
 import { Observable, switchMap } from 'rxjs';
-import { Amiibo } from 'src/app/interfaces/amiibo';
+import { Amiibo, Nintendo } from 'src/app/interfaces/amiibo';
 
 
 
@@ -16,7 +16,7 @@ import { Amiibo } from 'src/app/interfaces/amiibo';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit{
-  personaje$!:Observable<any>
+  personaje$!:Observable<Nintendo>
   personaje!:Amiibo
   constructor(private nintendoService:NintendoService, private route:ActivatedRoute, private location:Location){
 

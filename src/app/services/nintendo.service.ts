@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Signal,Injector } from '@angular/core';
 import { Amiibo, Nintendo } from '../interfaces/amiibo';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 
 @Injectable(
@@ -16,8 +16,8 @@ export class NintendoService {
     public nintendo:Signal<Amiibo[]>= toSignal(this.http.get<Nintendo>('https://amiiboapi.com/api/amiibo/?name=mario').pipe(map((res: any) => res.amiibo)))
    
    
-  getOne(id:any){
-return this.http.get(`https://amiiboapi.com/api/amiibo/?tail=${id}`)
-  }
+    getOne(id:any):Observable<Nintendo>{
+      return this.http.get<Nintendo>(`https://amiiboapi.com/api/amiibo/?tail=${id}`)
+        }
 }
 
